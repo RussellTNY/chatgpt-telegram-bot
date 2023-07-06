@@ -110,10 +110,9 @@ async def gptanswer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
-#feature 1: 区分不同的用户，每个用户有自己的context
-#feature 2: 能够保存会话的context，用户能够继续上次的对话
-#feature 3: 用户能够听到语音回复，支持英文
-#feature 4: 用户能够用语音输入，支持中文，英文，日语，韩语，越南语，马来西亚语，泰国语，印尼语
+## feature 1: 区分不同的用户，每个用户有自己的context
+## feature 2: 能够保存会话的context，用户能够继续上次的对话
+## feature 3: 用户能够听到语音回复，支持英文 
 async def ask_Campbell(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.message.from_user
     user_message = update.message.text
@@ -166,18 +165,10 @@ async def ask_Campbell(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
  
 if __name__ == '__main__':
-    #Campbell
-    if DEBUG:
-        #TBot
-        print("TBot is on.")
-        logger.info("TBot is on.")
-        application = ApplicationBuilder().token('6167178675:AAHp_HjImMsYS3vvT9CCu1d9WRNomQfvdr0').build()
-    else:
-        #Ask Campbell
-        logger.info("Campbell is on.")
-        print("Campbell is on.")
-        application = ApplicationBuilder().token('6128557543:AAGy7JB5y2yjrsVaSqN0_WTwdbxnzyfN-Pg').build()
-    #TBot
+    #Ask Campbell
+    logger.info("Campbell is on.")
+    print("Campbell is on.")
+    application = ApplicationBuilder().token('YOUR TOKEN').build()
 
     # /commands /start, /voice, /text, /deposit, /balance
     handlers = []
